@@ -1,0 +1,64 @@
+/* =====================================> Style my App <===================================== */
+:root {
+    --white-color: #FFFFFF;
+    --black-color: #151515;
+    --gray-color: #F5F5F5;
+    --sage-color: #ADBC9F;
+    --sage-color-dark: #436850;
+}
+
+/* =====================================> bg body <===================================== */
+body {
+    background-color: var(--gray-color);
+}
+
+/* =====================================> Class Navigasi <===================================== */
+.navigasi{
+    background-color: var(--sage-color);
+}
+
+/* =====================================> Class Home <===================================== */
+.clas-home {
+    background-image: url('../assets/img/bg-home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* =====================================> Class Product <===================================== */
+.clas-product {
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.card img {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.card-title {
+    font-size: 17px;
+}
+.card-text{
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* =====================================> Class Category <===================================== */
+.clas-category {
+    margin-bottom: 5rem;
+}
+
+.card-category .anakcard-category{
+    cursor: pointer;
+}
+.card-category .anakcard-category:hover{
+    /* buatkan shadow tipis */
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    color: var(--black-color);
+    border: none;
+    transition: 0.2s;
+    
+}
