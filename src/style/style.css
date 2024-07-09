@@ -5,6 +5,7 @@
     --gray-color: #F5F5F5;
     --sage-color: #ADBC9F;
     --sage-color-dark: #436850;
+    --red-color: #C80036;
 }
 
 /* =====================================> bg body <===================================== */
@@ -61,4 +62,30 @@ body {
     border: none;
     transition: 0.2s;
     
+}
+
+/* =====================================> Class Cart <===================================== */
+.cart-number {
+    position: absolute;
+    top: 11px;
+    right: 60px;
+    background-color: var(--red-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+.number{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin: auto;
+}
+
+.cart-list{
+    background-color: var(--white-color);
+    width: 400px;
+    max-width: 400px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin-left: -200px;
 }

@@ -1,29 +1,20 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import Cart from "./cart/Cart"
 
 const Navigasi = () => {
   return (
     <div className="clas-navigasi">
       <Navbar expand="lg" className="navigasi fixed-top shadow-sm">
         <Container>
-          <Navbar.Brand href="#home">ndr shop</Navbar.Brand>
+          <Navbar.Brand href="/" className="fw-bold">NDRSHOP</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+
+                <Cart/>
+          
             </Nav>
           </Navbar.Collapse>
         </Container>
