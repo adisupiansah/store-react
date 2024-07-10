@@ -1,12 +1,15 @@
-import './style/style.css'
-import MyWeb from './components/router/MyWeb'
+import "./style/style.css";
+import MyWeb from "./components/router/MyWeb";
+import { ProductProvider } from "./provider/context/ProductProvider";
 
 const App = () => {
   return (
     <>
-       <MyWeb />
+      <ProductProvider>
+        <MyWeb />
+      </ProductProvider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
