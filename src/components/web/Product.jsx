@@ -6,21 +6,22 @@ import { ProductContext } from "../../provider/context/ProductProvider";
 
 const Product = () => {
   const { product } = useContext(ProductContext);
+  console.log("daata gw:", product);
 
   return (
     <div className="clas-product">
       <Container>
         <Category />
         <Row>
-          {product.map((item, index) => (
-            <Col md={2} key={index}>
+          {product.map((item) => (
+            <Col md={2} key={item.id}>
               <Card>
                 <Card.Img variant="top" src={gambarproduct1} />
                 <Card.Body>
-                  <Card.Title>Sweater Cowok</Card.Title>
-                  <Card.Text>Sweter cowok distro</Card.Text>
+                  <Card.Title>{item.nama_product}</Card.Title>
+                  <Card.Text>{item.ket_product}</Card.Text>
                   <Card.Text>
-                    <span className="fw-bold">Rp. 100.000</span>
+                    <span className="fw-bold">Rp. {item.harga}</span>
                   </Card.Text>
                   <Button variant="primary">add to cart</Button>
                 </Card.Body>
