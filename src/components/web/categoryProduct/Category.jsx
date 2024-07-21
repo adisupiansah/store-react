@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../../provider/context/ProductProvider";
 const Category = ({ onSelectedId }) => {
     const {products} = useContext(ProductContext)
-
+    
   return (
     <div className="clas-category">
       <Row>

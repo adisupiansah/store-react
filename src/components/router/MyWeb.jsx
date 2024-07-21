@@ -1,15 +1,39 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Navigasi from "../web/Navigasi"
-import Home from "../web/Home"
-import Product from "../web/Product"
+import { Routes, Route } from "react-router-dom";
+import Navigasi from "../web/Navigasi";
+import Home from "../web/Home";
+import Product from "../web/Product";
+import Cartpage from "../web/cart/Cartpage";
+import Header from "../web/Header";
+
 const MyWeb = () => {
   return (
     <div>
-      <Navigasi />
-      <Home />
-      <Product />
+      <Routes>
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Header />
+              <Cartpage />
+            </>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="fixed-top">
+                <Header/>
+                <Navigasi />
+              </div>
+              <Home />
+              <Product />
+            </>
+          }
+        />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default MyWeb
+export default MyWeb;
