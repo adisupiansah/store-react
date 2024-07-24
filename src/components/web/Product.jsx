@@ -4,6 +4,8 @@ import { useContext, useState } from "react";
 import { ProductContext } from "../../provider/context/ProductProvider";
 import { CartContext } from "../../provider/context/CartProvider";
 import { Rupiah } from "../../utils/FormatRP/Rupiah";
+import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 
 const Product = () => {
@@ -28,6 +30,12 @@ const Product = () => {
 
   const handleAddToCart = (item) => {
     addToCart(item);
+    Swal.fire({
+      title: "Berhasil",
+      text: "Barang ditambahkan ke keranjang",
+      icon: "success",
+      confirmButtonText: "OK",
+    })
     console.log("berhasil dikirmkan ke Cartpage", item);
   }
 
@@ -50,7 +58,12 @@ const Product = () => {
                       <Card.Text>
                         <span className="fw-bold">Rp {Rupiah(filterProducts[productId].items[itemId].harga)}</span>
                       </Card.Text>
-                      <Button variant="primary" size="sm" onClick={() => handleAddToCart(item)}> add cart </Button>
+                      <div className="justify-content-between d-flex">
+                          <Button variant="primary" size="sm" onClick={() => handleAddToCart(item)}> add cart </Button>
+                          <Link to={`/productdetail/${item.id}`}>
+                            <Button variant="primary" size="sm" > detail </Button>
+                          </Link>
+                      </div>
                     </Card.Body>
                   </Card>
                 </Col>

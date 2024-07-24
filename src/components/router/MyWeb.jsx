@@ -4,6 +4,7 @@ import Home from "../web/Home";
 import Product from "../web/Product";
 import Cartpage from "../web/cart/Cartpage";
 import Header from "../web/Header";
+import ProductDetail from "../web/page/ProductDetail";
 
 const MyWeb = () => {
   return (
@@ -31,6 +32,15 @@ const MyWeb = () => {
             </>
           }
         />
+        <Route path="/productdetail/:id" element={
+          <>
+            <div className="fixed-top">
+              <Header/>
+              <Navigasi/>
+            </div>
+            <ProductDetail/>
+          </>
+        }/>
       </Routes>
     </div>
   );
