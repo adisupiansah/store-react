@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
 import {auth, database} from "../../sdk/Firebase/FirebaseSDK";
 import { ref, set } from "firebase/database";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const LoginContext = createContext();
 
@@ -47,7 +47,7 @@ const LoginProvider = ({ children }) => {
             console.log('berhasil daftar manual ni guys', user);
         })
         .catch((error) => {
-            console.error('ada error ni pak di bagian register', error);
+            console.error('ada error ni pak di bagian register - LoginProvider.jsx', error);
         });
     }
 
@@ -75,7 +75,6 @@ const LoginProvider = ({ children }) => {
                 photoURL: user.photoURL,
                 createdAt: new Date().toISOString()
             })
-            console.log('berhasil ini guys', user);
         })
         .catch((error) => {
             console.error('ada error ni pak di bagian loginWithGoogle', error);
@@ -89,5 +88,5 @@ const LoginProvider = ({ children }) => {
         </LoginContext.Provider>
     )
 }
-
+export const useLogin = () => useContext(LoginContext)
 export { LoginContext, LoginProvider }

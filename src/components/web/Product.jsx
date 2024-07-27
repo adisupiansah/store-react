@@ -36,7 +36,6 @@ const Product = () => {
       icon: "success",
       confirmButtonText: "OK",
     })
-    console.log("berhasil dikirmkan ke Cartpage", item);
   }
 
   return (

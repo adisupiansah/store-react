@@ -8,6 +8,7 @@ import ProductDetail from "../web/page/ProductDetail";
 import Login from "../web/log/login";
 import { LoginContext } from "../../provider/context/LoginProvider";
 import { useContext } from "react";
+import Register from "../web/log/Register";
 
 const MyWeb = () => {
   const NoUser = ({ children }) => {
@@ -33,6 +34,16 @@ const MyWeb = () => {
   return (
     <div>
       <Routes>
+        <Route
+          path="/register"
+          element={
+            <RequireLogin>
+              <>
+                <Register />
+              </>
+            </RequireLogin>
+          }
+        />
         <Route
           path="/login"
           element={
